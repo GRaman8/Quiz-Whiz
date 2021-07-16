@@ -1,0 +1,222 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+#include<fstream.h>
+class quiz
+{
+int sc,x,y;
+char ch1[100],ch2;
+char ch;
+public:
+void football();
+};
+void quiz::football()
+{
+clrscr();
+sc=0;
+x=y=0;
+ofstream fout("instruction.txt",ios::out);
+fout<<"GENERAL INSTRUCTION/GUIDLINES.";
+fout<<"\n\n 1)This quiz is designed for all age groups.";
+fout<<"\n\n 2)The whole quiz is divided into two parts.";
+fout<<"\n  =>Kids level.";
+fout<<"\n  =>Adult level.";
+fout<<"\n\n 3)For each correct answer 10 points will be awarded.";
+fout<<"\n\n 4)No negative marking.";
+fout<<"\n\n 5)ALL THE BEST!";
+fout.close();
+ifstream fin("instruction.txt",ios::in);
+while(fin.get(ch))
+{
+if(ch=='.')
+cout<<endl;
+else
+cout<<ch;
+}
+fin.close();
+cout<<"\n\n\n\n\t*****ENTER YOUR NAME*****:";
+cin>>ch1;
+clrscr();
+cout<<"\n welcome"<<"\t"<<ch1<<".\n sobriquet is an unofficial title or name given to someone or something.";
+cout<<"\n\n Enter the age:";
+cin>>x;
+if(x<18)
+strcpy(ch1,"Kids level");
+else
+strcpy(ch1,"Adult level");
+clrscr();
+cout<<"\n\n You are under"<<ch1<<"mode.";
+if(strcmpi(ch1,"Kids level")==0)
+{
+cout<<"\n\n Your score:"<<sc;
+cout<<"\n\n Question 1:Name the world's biggest island?";
+cout<<"\n\n 1.Greenland          2.New Zealand\n";
+cin>>y;
+if(y==1)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 2:What is the world's longest river?";
+cout<<"\n\n 1.Amazon    2.Nile\n";
+cin>>y;
+if(y==2)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 3:WHat is the capital city of spain?";
+cout<<"\n\n 1.Madrid        2.barcelona\n";
+cin>>y;
+if(y==1)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 4:Which country is Prague in?";
+cout<<"\n\n 1.Russia        2.Czech Republic\n";
+cin>>y;
+if(y==2)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 5:Which chess piece can only move diagonally?";
+cout<<"\n\n 1.A Queen       2.A Bishop\n";
+cin>>y;
+if(y==2)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+if(sc>=40)
+{
+cout<<"\n\n\n You are a Genius.\n"<<"Your Score is:\n"<<sc;
+}
+else if(sc==30)
+{
+cout<<"\n\n\n You are Brilliant.\n Your Score is 30";
+}
+else if(sc==20)
+{
+cout<<"\n\n\n You are Intelligent.\n Your Score is 20";
+}
+else
+{
+cout<<"\n Better Luck Next Time";
+}
+}
+else if(strcmpi(ch1,"Adult level")==0)
+{
+cout<<"\n\n Your Score:"<<sc;
+cout<<"\n\n Question 1:Name the only footballer to have played for Liverpool,Everton,Manchester City and Manchester United?";
+cout<<"\n\n 1.James Milner         2.Carlez Tevez \n";
+cout<<"\n\n 3.Peter Beardsley     4.Rooney\n";
+cin>>y;
+if(y==3)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t\ oops!Wrong answer";
+}
+cout<<"\n\n Question 2:In Football,Who was nicknamed 'The Divine Ponytail'?";
+cout<<"\n\n 1.Roberto Baggio        2.Pele\n";
+cout<<"\n\n 3.Messi                 4.Sergio Ramos\n";
+cin>>y;
+if(y==1)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 3:Which is the only American state to begin with the letter 'p'?";
+cout<<"\n\n 1.Phoenix        2.Pennsylvania\n";
+cout<<"\n\n 3.Portland       4.Poland\n";
+cin>>y;
+if(y==2)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 4:Where would you find the world's most ancient forest?";
+cout<<"\n\n 1.Amazon Forest       2.Sangano Bamboo Forest\n";
+cout<<"\n\n 3.Daintree Forest     4.Redwood National Park\n";
+cin>>y;
+if(y==3)
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+cout<<"\n\n Question 5:Which four British cities have underground rail systems?";
+cout<<"\n 1.Liverpool,Manchester,Oxford and Cardiff  2.Manchester,London,Cambridge and Glasgow\n";
+cout<<" 3.Oxford,Cambridge,London and Brimingham   4.Liverpool,Glasgow,Newcastle and London\n";
+cin>>y;
+if(y==4)
+
+{
+cout<<"\n\t\t\t GOOD JOB!!";
+sc=sc+10;
+}
+else
+{
+cout<<"\n\t\t\t oops!Wrong answer";
+}
+if(sc>=40)
+{
+cout<<"\n\n\n You are a Genius.\n"<<"Your Score is:\n"<<sc;
+}
+else if(sc==30)
+{
+cout<<"\n\n\n You are Brilliant.\n Your Score is 30";
+}
+else if(sc==20)
+{
+cout<<"\n\n\n You are Intelligent.\n Your Score is 20";
+}
+else
+{
+cout<<"\n Better Luck Next Time";
+}
+}
+}
+void main()
+{
+quiz q;
+q.football();
+getch();
+}
